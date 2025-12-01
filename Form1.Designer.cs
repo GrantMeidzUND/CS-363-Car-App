@@ -247,6 +247,7 @@
             this.themeButton.TabIndex = 18;
             this.themeButton.Text = "DAY/NIGHT";
             this.themeButton.UseVisualStyleBackColor = true;
+            this.themeButton.Click += new System.EventHandler(this.themeButton_Click);
             // 
             // externalTempLabel
             // 

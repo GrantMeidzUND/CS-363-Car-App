@@ -18,5 +18,17 @@ namespace CS_363_Car_App
             pictureBox1.Image = Properties.Resources.car_pic;
             pictureBox2.Image = Properties.Resources.map_pic;
         }
+
+        private void themeButton_Click(object sender, EventArgs e)
+        {
+            if(this.BackColor == Color.Black)
+            {
+                this.BackColor = Color.White;
+            }
+            else
+            {
+                this.BackColor = Color.Black;
+            }
+        }
     }
 }
