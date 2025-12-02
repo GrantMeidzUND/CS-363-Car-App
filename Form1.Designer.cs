@@ -1,6 +1,6 @@
 ﻿namespace CS_363_Car_App
 {
-    partial class Form1
+    partial class carApp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(carApp));
             this.driverButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -56,15 +56,17 @@
             this.errorsLabel = new System.Windows.Forms.Label();
             this.errorsListLabel = new System.Windows.Forms.Label();
             this.activitiesLogLabel = new System.Windows.Forms.Label();
+            this.currentDriverLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // driverButton
             // 
+            this.driverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.driverButton.Location = new System.Drawing.Point(12, 12);
             this.driverButton.Name = "driverButton";
-            this.driverButton.Size = new System.Drawing.Size(75, 23);
+            this.driverButton.Size = new System.Drawing.Size(75, 26);
             this.driverButton.TabIndex = 0;
             this.driverButton.Text = "DRIVER";
             this.driverButton.UseVisualStyleBackColor = true;
@@ -255,9 +257,9 @@
             this.externalTempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.externalTempLabel.Location = new System.Drawing.Point(481, 345);
             this.externalTempLabel.Name = "externalTempLabel";
-            this.externalTempLabel.Size = new System.Drawing.Size(221, 31);
+            this.externalTempLabel.Size = new System.Drawing.Size(258, 31);
             this.externalTempLabel.TabIndex = 19;
-            this.externalTempLabel.Text = "External Temp: F";
+            this.externalTempLabel.Text = "External Temp: 20 F";
             // 
             // internalTempLabel
             // 
@@ -265,9 +267,9 @@
             this.internalTempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.internalTempLabel.Location = new System.Drawing.Point(481, 286);
             this.internalTempLabel.Name = "internalTempLabel";
-            this.internalTempLabel.Size = new System.Drawing.Size(213, 31);
+            this.internalTempLabel.Size = new System.Drawing.Size(250, 31);
             this.internalTempLabel.TabIndex = 20;
-            this.internalTempLabel.Text = "Internal Temp: F";
+            this.internalTempLabel.Text = "Internal Temp: 75 F";
             // 
             // batteryLabel
             // 
@@ -285,9 +287,9 @@
             this.oilLevelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.oilLevelLabel.Location = new System.Drawing.Point(481, 166);
             this.oilLevelLabel.Name = "oilLevelLabel";
-            this.oilLevelLabel.Size = new System.Drawing.Size(127, 31);
+            this.oilLevelLabel.Size = new System.Drawing.Size(203, 31);
             this.oilLevelLabel.TabIndex = 22;
-            this.oilLevelLabel.Text = "Oil Level:";
+            this.oilLevelLabel.Text = "Oil Level: 100%";
             // 
             // engineTempLabel
             // 
@@ -295,9 +297,9 @@
             this.engineTempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.engineTempLabel.Location = new System.Drawing.Point(481, 109);
             this.engineTempLabel.Name = "engineTempLabel";
-            this.engineTempLabel.Size = new System.Drawing.Size(206, 31);
+            this.engineTempLabel.Size = new System.Drawing.Size(258, 31);
             this.engineTempLabel.TabIndex = 23;
-            this.engineTempLabel.Text = "Engine Temp: F";
+            this.engineTempLabel.Text = "Engine Temp: 200 F";
             // 
             // errorsLabel
             // 
@@ -329,11 +331,22 @@
             this.activitiesLogLabel.TabIndex = 26;
             this.activitiesLogLabel.Text = "Action         Date";
             // 
-            // Form1
+            // currentDriverLabel
+            // 
+            this.currentDriverLabel.AutoSize = true;
+            this.currentDriverLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.currentDriverLabel.Location = new System.Drawing.Point(93, 17);
+            this.currentDriverLabel.Name = "currentDriverLabel";
+            this.currentDriverLabel.Size = new System.Drawing.Size(110, 17);
+            this.currentDriverLabel.TabIndex = 27;
+            this.currentDriverLabel.Text = "Currrent Driver: ";
+            // 
+            // carApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 636);
+            this.Controls.Add(this.currentDriverLabel);
             this.Controls.Add(this.activitiesLogLabel);
             this.Controls.Add(this.errorsListLabel);
             this.Controls.Add(this.errorsLabel);
@@ -361,7 +374,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.driverButton);
-            this.Name = "Form1";
+            this.Name = "carApp";
             this.Text = "Car_App";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -389,16 +402,17 @@
         private System.Windows.Forms.Label activitiesLabel;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button stopButton;
-        private System.Windows.Forms.Label fuelLabel;
         private System.Windows.Forms.Button themeButton;
-        private System.Windows.Forms.Label externalTempLabel;
-        private System.Windows.Forms.Label internalTempLabel;
-        private System.Windows.Forms.Label batteryLabel;
-        private System.Windows.Forms.Label oilLevelLabel;
-        private System.Windows.Forms.Label engineTempLabel;
         private System.Windows.Forms.Label errorsLabel;
         private System.Windows.Forms.Label errorsListLabel;
         private System.Windows.Forms.Label activitiesLogLabel;
+        private System.Windows.Forms.Label currentDriverLabel;
+        public System.Windows.Forms.Label fuelLabel;
+        public System.Windows.Forms.Label externalTempLabel;
+        public System.Windows.Forms.Label internalTempLabel;
+        public System.Windows.Forms.Label batteryLabel;
+        public System.Windows.Forms.Label oilLevelLabel;
+        public System.Windows.Forms.Label engineTempLabel;
     }
 }
 

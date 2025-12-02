@@ -10,17 +10,24 @@ using System.Windows.Forms;
 
 namespace CS_363_Car_App
 {
-    public partial class Form1 : Form
+    public partial class carApp : Form
     {
-        public Form1()
+
+        public carApp()
         {
             InitializeComponent();
             pictureBox1.Image = Properties.Resources.car_pic;
             pictureBox2.Image = Properties.Resources.map_pic;
+
+            //creates and shows the controller
+            controllerForm controllerForm = new controllerForm(this);
+            controllerForm.Show();
         }
 
+        //impliments day/night theme button
         private void themeButton_Click(object sender, EventArgs e)
         {
+            //night -> day
             if(this.BackColor == Color.Black)
             {
                 this.BackColor = Color.White;
@@ -39,6 +46,7 @@ namespace CS_363_Car_App
                 doorsLabel.ForeColor = Color.Black;
                 alarmLabel.ForeColor = Color.Black;
                 windowsLabel.ForeColor = Color.Black;
+                currentDriverLabel.ForeColor = Color.Black;
 
                 startButton.ForeColor = Color.Black;
                 startButton.BackColor = Color.White;
@@ -59,6 +67,7 @@ namespace CS_363_Car_App
                 driverButton.ForeColor = Color.Black;
                 driverButton.BackColor = Color.White;
             }
+            //day -> night
             else
             {
                 this.BackColor = Color.Black;
@@ -77,6 +86,7 @@ namespace CS_363_Car_App
                 doorsLabel.ForeColor = Color.White;
                 alarmLabel.ForeColor = Color.White;
                 windowsLabel.ForeColor = Color.White;
+                currentDriverLabel.ForeColor = Color.White;
 
                 startButton.ForeColor = Color.White;
                 startButton.BackColor = Color.Black;

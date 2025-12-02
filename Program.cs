@@ -16,9 +16,9 @@ namespace CS_363_Car_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form2 controllerForm = new Form2();
-            controllerForm.Show();
-            Application.Run(new Form1());
+            Application.Run(new carApp());
+            //controllerForm controllerForm = new controllerForm(this);
+            //controllerForm.Show();
         }
     }
 }
