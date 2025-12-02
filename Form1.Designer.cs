@@ -36,7 +36,7 @@
             this.windowsLabel = new System.Windows.Forms.Label();
             this.alarmLabel = new System.Windows.Forms.Label();
             this.doorsLabel = new System.Windows.Forms.Label();
-            this.DoorUnlockButton = new System.Windows.Forms.Button();
+            this.doorUnlockButton = new System.Windows.Forms.Button();
             this.doorLockButton = new System.Windows.Forms.Button();
             this.windowsOpenButton = new System.Windows.Forms.Button();
             this.windowsCloseButton = new System.Windows.Forms.Button();
@@ -54,8 +54,8 @@
             this.oilLevelLabel = new System.Windows.Forms.Label();
             this.engineTempLabel = new System.Windows.Forms.Label();
             this.errorsLabel = new System.Windows.Forms.Label();
-            this.vehilceErrorsLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.errorsListLabel = new System.Windows.Forms.Label();
+            this.activitiesLogLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -129,15 +129,15 @@
             this.doorsLabel.TabIndex = 6;
             this.doorsLabel.Text = "Doors:";
             // 
-            // DoorUnlockButton
+            // doorUnlockButton
             // 
-            this.DoorUnlockButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.DoorUnlockButton.Location = new System.Drawing.Point(140, 455);
-            this.DoorUnlockButton.Name = "DoorUnlockButton";
-            this.DoorUnlockButton.Size = new System.Drawing.Size(112, 31);
-            this.DoorUnlockButton.TabIndex = 7;
-            this.DoorUnlockButton.Text = "UNLOCK";
-            this.DoorUnlockButton.UseVisualStyleBackColor = true;
+            this.doorUnlockButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.doorUnlockButton.Location = new System.Drawing.Point(140, 455);
+            this.doorUnlockButton.Name = "doorUnlockButton";
+            this.doorUnlockButton.Size = new System.Drawing.Size(112, 31);
+            this.doorUnlockButton.TabIndex = 7;
+            this.doorUnlockButton.Text = "UNLOCK";
+            this.doorUnlockButton.UseVisualStyleBackColor = true;
             // 
             // doorLockButton
             // 
@@ -193,7 +193,7 @@
             // 
             this.vehicleDataLabel.AutoSize = true;
             this.vehicleDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vehicleDataLabel.Location = new System.Drawing.Point(499, 44);
+            this.vehicleDataLabel.Location = new System.Drawing.Point(472, 44);
             this.vehicleDataLabel.Name = "vehicleDataLabel";
             this.vehicleDataLabel.Size = new System.Drawing.Size(259, 46);
             this.vehicleDataLabel.TabIndex = 13;
@@ -253,7 +253,7 @@
             // 
             this.externalTempLabel.AutoSize = true;
             this.externalTempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.externalTempLabel.Location = new System.Drawing.Point(508, 345);
+            this.externalTempLabel.Location = new System.Drawing.Point(481, 345);
             this.externalTempLabel.Name = "externalTempLabel";
             this.externalTempLabel.Size = new System.Drawing.Size(221, 31);
             this.externalTempLabel.TabIndex = 19;
@@ -263,7 +263,7 @@
             // 
             this.internalTempLabel.AutoSize = true;
             this.internalTempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.internalTempLabel.Location = new System.Drawing.Point(508, 286);
+            this.internalTempLabel.Location = new System.Drawing.Point(481, 286);
             this.internalTempLabel.Name = "internalTempLabel";
             this.internalTempLabel.Size = new System.Drawing.Size(213, 31);
             this.internalTempLabel.TabIndex = 20;
@@ -273,7 +273,7 @@
             // 
             this.batteryLabel.AutoSize = true;
             this.batteryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.batteryLabel.Location = new System.Drawing.Point(508, 226);
+            this.batteryLabel.Location = new System.Drawing.Point(481, 226);
             this.batteryLabel.Name = "batteryLabel";
             this.batteryLabel.Size = new System.Drawing.Size(185, 31);
             this.batteryLabel.TabIndex = 21;
@@ -283,7 +283,7 @@
             // 
             this.oilLevelLabel.AutoSize = true;
             this.oilLevelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.oilLevelLabel.Location = new System.Drawing.Point(508, 166);
+            this.oilLevelLabel.Location = new System.Drawing.Point(481, 166);
             this.oilLevelLabel.Name = "oilLevelLabel";
             this.oilLevelLabel.Size = new System.Drawing.Size(127, 31);
             this.oilLevelLabel.TabIndex = 22;
@@ -293,7 +293,7 @@
             // 
             this.engineTempLabel.AutoSize = true;
             this.engineTempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.engineTempLabel.Location = new System.Drawing.Point(508, 109);
+            this.engineTempLabel.Location = new System.Drawing.Point(481, 109);
             this.engineTempLabel.Name = "engineTempLabel";
             this.engineTempLabel.Size = new System.Drawing.Size(206, 31);
             this.engineTempLabel.TabIndex = 23;
@@ -303,39 +303,39 @@
             // 
             this.errorsLabel.AutoSize = true;
             this.errorsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorsLabel.Location = new System.Drawing.Point(499, 403);
+            this.errorsLabel.Location = new System.Drawing.Point(472, 407);
             this.errorsLabel.Name = "errorsLabel";
             this.errorsLabel.Size = new System.Drawing.Size(286, 46);
             this.errorsLabel.TabIndex = 24;
             this.errorsLabel.Text = "Vehicle Errors";
             // 
-            // vehilceErrorsLabel
+            // errorsListLabel
             // 
-            this.vehilceErrorsLabel.AutoSize = true;
-            this.vehilceErrorsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.vehilceErrorsLabel.Location = new System.Drawing.Point(508, 469);
-            this.vehilceErrorsLabel.Name = "vehilceErrorsLabel";
-            this.vehilceErrorsLabel.Size = new System.Drawing.Size(220, 31);
-            this.vehilceErrorsLabel.TabIndex = 25;
-            this.vehilceErrorsLabel.Text = "- List Errors Here";
+            this.errorsListLabel.AutoSize = true;
+            this.errorsListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.errorsListLabel.Location = new System.Drawing.Point(481, 473);
+            this.errorsListLabel.Name = "errorsListLabel";
+            this.errorsListLabel.Size = new System.Drawing.Size(220, 31);
+            this.errorsListLabel.TabIndex = 25;
+            this.errorsListLabel.Text = "- List Errors Here";
             // 
-            // label1
+            // activitiesLogLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(878, 345);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 31);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Action         Date";
+            this.activitiesLogLabel.AutoSize = true;
+            this.activitiesLogLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.activitiesLogLabel.Location = new System.Drawing.Point(878, 345);
+            this.activitiesLogLabel.Name = "activitiesLogLabel";
+            this.activitiesLogLabel.Size = new System.Drawing.Size(211, 31);
+            this.activitiesLogLabel.TabIndex = 26;
+            this.activitiesLogLabel.Text = "Action         Date";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 636);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.vehilceErrorsLabel);
+            this.Controls.Add(this.activitiesLogLabel);
+            this.Controls.Add(this.errorsListLabel);
             this.Controls.Add(this.errorsLabel);
             this.Controls.Add(this.engineTempLabel);
             this.Controls.Add(this.oilLevelLabel);
@@ -353,7 +353,7 @@
             this.Controls.Add(this.windowsCloseButton);
             this.Controls.Add(this.windowsOpenButton);
             this.Controls.Add(this.doorLockButton);
-            this.Controls.Add(this.DoorUnlockButton);
+            this.Controls.Add(this.doorUnlockButton);
             this.Controls.Add(this.doorsLabel);
             this.Controls.Add(this.alarmLabel);
             this.Controls.Add(this.windowsLabel);
@@ -379,7 +379,7 @@
         private System.Windows.Forms.Label windowsLabel;
         private System.Windows.Forms.Label alarmLabel;
         private System.Windows.Forms.Label doorsLabel;
-        private System.Windows.Forms.Button DoorUnlockButton;
+        private System.Windows.Forms.Button doorUnlockButton;
         private System.Windows.Forms.Button doorLockButton;
         private System.Windows.Forms.Button windowsOpenButton;
         private System.Windows.Forms.Button windowsCloseButton;
@@ -397,8 +397,8 @@
         private System.Windows.Forms.Label oilLevelLabel;
         private System.Windows.Forms.Label engineTempLabel;
         private System.Windows.Forms.Label errorsLabel;
-        private System.Windows.Forms.Label vehilceErrorsLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label errorsListLabel;
+        private System.Windows.Forms.Label activitiesLogLabel;
     }
 }
 
