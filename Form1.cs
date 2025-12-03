@@ -12,7 +12,8 @@ namespace CS_363_Car_App
 {
     public partial class carApp : Form
     {
-
+        public bool doorsUnlocked;
+        public bool alarmON;
         public carApp()
         {
             InitializeComponent();
@@ -108,6 +109,36 @@ namespace CS_363_Car_App
                 driverButton.BackColor = Color.Black;
 
             }
+        }
+
+        private void doorUnlockButton_Click(object sender, EventArgs e)
+        {
+            doorsUnlocked = true;
+        }
+
+        private void doorLockButton_Click(object sender, EventArgs e)
+        {
+            doorsUnlocked = false;
+        }
+
+        private void windowsOpenButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Windows Opened");
+        }
+
+        private void windowsCloseButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Windows Closed");
+        }
+
+        private void alarmONButton_Click(object sender, EventArgs e)
+        {
+            alarmON = true;
+        }
+
+        private void alarmOFFButton_Click(object sender, EventArgs e)
+        {
+            alarmON = false;
         }
     }
 }

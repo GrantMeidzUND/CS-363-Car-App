@@ -32,17 +32,20 @@
             this.driveButton = new System.Windows.Forms.Button();
             this.errorButton = new System.Windows.Forms.Button();
             this.vehicleResetButton = new System.Windows.Forms.Button();
+            this.openDoorsButton = new System.Windows.Forms.Button();
+            this.openWindowsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // breakInButton
             // 
             this.breakInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.breakInButton.Location = new System.Drawing.Point(12, 94);
+            this.breakInButton.Location = new System.Drawing.Point(12, 176);
             this.breakInButton.Name = "breakInButton";
             this.breakInButton.Size = new System.Drawing.Size(94, 35);
             this.breakInButton.TabIndex = 0;
             this.breakInButton.Text = "Break In";
             this.breakInButton.UseVisualStyleBackColor = true;
+            this.breakInButton.Click += new System.EventHandler(this.breakInButton_Click);
             // 
             // driveButton
             // 
@@ -58,7 +61,7 @@
             // errorButton
             // 
             this.errorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.errorButton.Location = new System.Drawing.Point(12, 135);
+            this.errorButton.Location = new System.Drawing.Point(12, 217);
             this.errorButton.Name = "errorButton";
             this.errorButton.Size = new System.Drawing.Size(113, 35);
             this.errorButton.TabIndex = 2;
@@ -75,11 +78,34 @@
             this.vehicleResetButton.Text = "Reset Vehicle";
             this.vehicleResetButton.UseVisualStyleBackColor = true;
             // 
+            // openDoorsButton
+            // 
+            this.openDoorsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.openDoorsButton.Location = new System.Drawing.Point(12, 94);
+            this.openDoorsButton.Name = "openDoorsButton";
+            this.openDoorsButton.Size = new System.Drawing.Size(143, 35);
+            this.openDoorsButton.TabIndex = 4;
+            this.openDoorsButton.Text = "Open Doors";
+            this.openDoorsButton.UseVisualStyleBackColor = true;
+            this.openDoorsButton.Click += new System.EventHandler(this.openDoorsButton_Click);
+            // 
+            // openWindowsButton
+            // 
+            this.openWindowsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.openWindowsButton.Location = new System.Drawing.Point(12, 135);
+            this.openWindowsButton.Name = "openWindowsButton";
+            this.openWindowsButton.Size = new System.Drawing.Size(143, 35);
+            this.openWindowsButton.TabIndex = 5;
+            this.openWindowsButton.Text = "Open Windows";
+            this.openWindowsButton.UseVisualStyleBackColor = true;
+            // 
             // controllerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 450);
+            this.Controls.Add(this.openWindowsButton);
+            this.Controls.Add(this.openDoorsButton);
             this.Controls.Add(this.vehicleResetButton);
             this.Controls.Add(this.errorButton);
             this.Controls.Add(this.driveButton);
@@ -96,5 +122,7 @@
         private System.Windows.Forms.Button driveButton;
         private System.Windows.Forms.Button errorButton;
         private System.Windows.Forms.Button vehicleResetButton;
+        private System.Windows.Forms.Button openDoorsButton;
+        private System.Windows.Forms.Button openWindowsButton;
     }
 }

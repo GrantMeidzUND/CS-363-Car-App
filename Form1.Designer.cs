@@ -140,6 +140,7 @@
             this.doorUnlockButton.TabIndex = 7;
             this.doorUnlockButton.Text = "UNLOCK";
             this.doorUnlockButton.UseVisualStyleBackColor = true;
+            this.doorUnlockButton.Click += new System.EventHandler(this.doorUnlockButton_Click);
             // 
             // doorLockButton
             // 
@@ -150,6 +151,7 @@
             this.doorLockButton.TabIndex = 8;
             this.doorLockButton.Text = "LOCK";
             this.doorLockButton.UseVisualStyleBackColor = true;
+            this.doorLockButton.Click += new System.EventHandler(this.doorLockButton_Click);
             // 
             // windowsOpenButton
             // 
@@ -160,6 +162,7 @@
             this.windowsOpenButton.TabIndex = 9;
             this.windowsOpenButton.Text = "OPEN";
             this.windowsOpenButton.UseVisualStyleBackColor = true;
+            this.windowsOpenButton.Click += new System.EventHandler(this.windowsOpenButton_Click);
             // 
             // windowsCloseButton
             // 
@@ -170,6 +173,7 @@
             this.windowsCloseButton.TabIndex = 10;
             this.windowsCloseButton.Text = "CLOSE";
             this.windowsCloseButton.UseVisualStyleBackColor = true;
+            this.windowsCloseButton.Click += new System.EventHandler(this.windowsCloseButton_Click);
             // 
             // alarmOFFButton
             // 
@@ -180,6 +184,7 @@
             this.alarmOFFButton.TabIndex = 11;
             this.alarmOFFButton.Text = "OFF";
             this.alarmOFFButton.UseVisualStyleBackColor = true;
+            this.alarmOFFButton.Click += new System.EventHandler(this.alarmOFFButton_Click);
             // 
             // alarmONButton
             // 
@@ -190,6 +195,7 @@
             this.alarmONButton.TabIndex = 12;
             this.alarmONButton.Text = "ON";
             this.alarmONButton.UseVisualStyleBackColor = true;
+            this.alarmONButton.Click += new System.EventHandler(this.alarmONButton_Click);
             // 
             // vehicleDataLabel
             // 

@@ -45,5 +45,36 @@ namespace CS_363_Car_App
             batteryLevel -= 1;
             _carApp.batteryLabel.Text = "Battery: " + batteryLevel + "%";
         }
+
+        private void openDoorsButton_Click(object sender, EventArgs e)
+        {
+            bool doorsUnlocked = _carApp.doorsUnlocked;
+            if(doorsUnlocked == true)
+            {
+                //open doors message
+                MessageBox.Show("Doors Opened");
+                return;
+            }
+            else
+            {
+                //doors are locked message
+                MessageBox.Show("Doors are locked");
+                return;
+            }
+        }
+
+        private void breakInButton_Click(object sender, EventArgs e)
+        {
+            bool alarmOn = _carApp.alarmON;
+            if(alarmOn)
+            {
+                MessageBox.Show("ALERT: BREAK IN!!!!");
+            }
+            else
+            {
+                //maybe make so nothing happens
+                MessageBox.Show("No alarm sounded");
+            }
+        }
     }
 }
