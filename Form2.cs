@@ -15,10 +15,7 @@ namespace CS_363_Car_App
         private carApp _carApp; //lets you edit the labels from main form
         int fuelLevel = 100;
         int oilLevel = 100;
-        //int engineTemp = 200;
         int batteryLevel = 100;
-        //int internalTemp = 75;
-        //int externalTemp = 20;
 
         public controllerForm(carApp _carApp_)
         {
@@ -29,21 +26,41 @@ namespace CS_363_Car_App
         //This function lowers the values of the car "stats" when drive button is clicked
         private void driveButton_Click(object sender, EventArgs e)
         {
-            // if any levels below zero
-            if(fuelLevel <= 0 || oilLevel <= 0 || batteryLevel <= 0)
+            if(_carApp.carON)
             {
-                //insert error popup
-                return;
+                // if any levels below zero
+                if (fuelLevel <= 0)
+                {
+                    MessageBox.Show("ERROR: No Fuel");
+                    return;
+                }
+                else if (oilLevel <= 0)
+                {
+                    MessageBox.Show("ERROR: No Oil");
+                    return;
+                }
+                else if (batteryLevel <= 0)
+                {
+                    MessageBox.Show("ERROR: No Battery Charge");
+                    return;
+                }
+                else
+                {
+
+                    fuelLevel -= 1;
+                    _carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "%";
+
+                    oilLevel -= 1;
+                    _carApp.oilLevelLabel.Text = "Oil Level: " + oilLevel + "%";
+
+                    batteryLevel -= 1;
+                    _carApp.batteryLabel.Text = "Battery: " + batteryLevel + "%";
+                }
             }
-
-            fuelLevel -= 1;
-            _carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "%";
-
-            oilLevel -= 1;
-            _carApp.oilLevelLabel.Text = "Oil Level: " + oilLevel + "%";
-
-            batteryLevel -= 1;
-            _carApp.batteryLabel.Text = "Battery: " + batteryLevel + "%";
+            else
+            {
+                MessageBox.Show("Car Not On");
+            }
         }
 
         private void openDoorsButton_Click(object sender, EventArgs e)
@@ -75,6 +92,28 @@ namespace CS_363_Car_App
                 //maybe make so nothing happens
                 MessageBox.Show("No alarm sounded");
             }
+        }
+
+        private void refuelButton_Click(object sender, EventArgs e)
+        {
+            fuelLevel = 100;
+            _carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "%";
+            _carApp.activitiesLog.Text = DateTime.Now + "   Refueled\r\n" + _carApp.activitiesLog.Text;
+        }
+
+        private void oilChangeButton_Click(object sender, EventArgs e)
+        {
+            oilLevel = 100;
+            _carApp.oilLevelLabel.Text = "Oil: " + oilLevel + "%";
+            _carApp.activitiesLog.Text = DateTime.Now + "   Oil Changed\r\n" + _carApp.activitiesLog.Text;
+        }
+
+        private void batteryChargeButton_Click(object sender, EventArgs e)
+        {
+            batteryLevel = 100;
+            _carApp.batteryLabel.Text = "Battery: " + batteryLevel + "%";
+            _carApp.activitiesLog.Text = DateTime.Now + "   Battery Charged\r\n" + _carApp.activitiesLog.Text;
+
         }
     }
 }

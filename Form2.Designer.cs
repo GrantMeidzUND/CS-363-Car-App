@@ -33,13 +33,15 @@
             this.errorButton = new System.Windows.Forms.Button();
             this.vehicleResetButton = new System.Windows.Forms.Button();
             this.openDoorsButton = new System.Windows.Forms.Button();
-            this.openWindowsButton = new System.Windows.Forms.Button();
+            this.refuelButton = new System.Windows.Forms.Button();
+            this.oilChangeButton = new System.Windows.Forms.Button();
+            this.batteryChargeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // breakInButton
             // 
             this.breakInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.breakInButton.Location = new System.Drawing.Point(12, 176);
+            this.breakInButton.Location = new System.Drawing.Point(12, 135);
             this.breakInButton.Name = "breakInButton";
             this.breakInButton.Size = new System.Drawing.Size(94, 35);
             this.breakInButton.TabIndex = 0;
@@ -61,7 +63,7 @@
             // errorButton
             // 
             this.errorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.errorButton.Location = new System.Drawing.Point(12, 217);
+            this.errorButton.Location = new System.Drawing.Point(12, 176);
             this.errorButton.Name = "errorButton";
             this.errorButton.Size = new System.Drawing.Size(113, 35);
             this.errorButton.TabIndex = 2;
@@ -89,22 +91,47 @@
             this.openDoorsButton.UseVisualStyleBackColor = true;
             this.openDoorsButton.Click += new System.EventHandler(this.openDoorsButton_Click);
             // 
-            // openWindowsButton
+            // refuelButton
             // 
-            this.openWindowsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.openWindowsButton.Location = new System.Drawing.Point(12, 135);
-            this.openWindowsButton.Name = "openWindowsButton";
-            this.openWindowsButton.Size = new System.Drawing.Size(143, 35);
-            this.openWindowsButton.TabIndex = 5;
-            this.openWindowsButton.Text = "Open Windows";
-            this.openWindowsButton.UseVisualStyleBackColor = true;
+            this.refuelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.refuelButton.Location = new System.Drawing.Point(12, 217);
+            this.refuelButton.Name = "refuelButton";
+            this.refuelButton.Size = new System.Drawing.Size(113, 35);
+            this.refuelButton.TabIndex = 6;
+            this.refuelButton.Text = "Refuel";
+            this.refuelButton.UseVisualStyleBackColor = true;
+            this.refuelButton.Click += new System.EventHandler(this.refuelButton_Click);
+            // 
+            // oilChangeButton
+            // 
+            this.oilChangeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.oilChangeButton.Location = new System.Drawing.Point(12, 258);
+            this.oilChangeButton.Name = "oilChangeButton";
+            this.oilChangeButton.Size = new System.Drawing.Size(122, 35);
+            this.oilChangeButton.TabIndex = 7;
+            this.oilChangeButton.Text = "Oil Change";
+            this.oilChangeButton.UseVisualStyleBackColor = true;
+            this.oilChangeButton.Click += new System.EventHandler(this.oilChangeButton_Click);
+            // 
+            // batteryChargeButton
+            // 
+            this.batteryChargeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.batteryChargeButton.Location = new System.Drawing.Point(12, 299);
+            this.batteryChargeButton.Name = "batteryChargeButton";
+            this.batteryChargeButton.Size = new System.Drawing.Size(157, 35);
+            this.batteryChargeButton.TabIndex = 8;
+            this.batteryChargeButton.Text = "Charge Battery";
+            this.batteryChargeButton.UseVisualStyleBackColor = true;
+            this.batteryChargeButton.Click += new System.EventHandler(this.batteryChargeButton_Click);
             // 
             // controllerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 450);
-            this.Controls.Add(this.openWindowsButton);
+            this.Controls.Add(this.batteryChargeButton);
+            this.Controls.Add(this.oilChangeButton);
+            this.Controls.Add(this.refuelButton);
             this.Controls.Add(this.openDoorsButton);
             this.Controls.Add(this.vehicleResetButton);
             this.Controls.Add(this.errorButton);
@@ -123,6 +150,8 @@
         private System.Windows.Forms.Button errorButton;
         private System.Windows.Forms.Button vehicleResetButton;
         private System.Windows.Forms.Button openDoorsButton;
-        private System.Windows.Forms.Button openWindowsButton;
+        private System.Windows.Forms.Button refuelButton;
+        private System.Windows.Forms.Button oilChangeButton;
+        private System.Windows.Forms.Button batteryChargeButton;
     }
 }

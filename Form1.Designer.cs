@@ -55,8 +55,8 @@
             this.engineTempLabel = new System.Windows.Forms.Label();
             this.errorsLabel = new System.Windows.Forms.Label();
             this.errorsListLabel = new System.Windows.Forms.Label();
-            this.activitiesLogLabel = new System.Windows.Forms.Label();
             this.currentDriverLabel = new System.Windows.Forms.Label();
+            this.activitiesLog = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -213,9 +213,9 @@
             this.activitiesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.activitiesLabel.Location = new System.Drawing.Point(876, 286);
             this.activitiesLabel.Name = "activitiesLabel";
-            this.activitiesLabel.Size = new System.Drawing.Size(288, 46);
+            this.activitiesLabel.Size = new System.Drawing.Size(270, 46);
             this.activitiesLabel.TabIndex = 14;
-            this.activitiesLabel.Text = "Activities Data";
+            this.activitiesLabel.Text = "Activities Log";
             // 
             // startButton
             // 
@@ -226,6 +226,7 @@
             this.startButton.TabIndex = 15;
             this.startButton.Text = "START";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // stopButton
             // 
@@ -236,6 +237,7 @@
             this.stopButton.TabIndex = 16;
             this.stopButton.Text = "STOP";
             this.stopButton.UseVisualStyleBackColor = true;
+            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
             // 
             // fuelLabel
             // 
@@ -327,16 +329,6 @@
             this.errorsListLabel.TabIndex = 25;
             this.errorsListLabel.Text = "- List Errors Here";
             // 
-            // activitiesLogLabel
-            // 
-            this.activitiesLogLabel.AutoSize = true;
-            this.activitiesLogLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.activitiesLogLabel.Location = new System.Drawing.Point(878, 345);
-            this.activitiesLogLabel.Name = "activitiesLogLabel";
-            this.activitiesLogLabel.Size = new System.Drawing.Size(211, 31);
-            this.activitiesLogLabel.TabIndex = 26;
-            this.activitiesLogLabel.Text = "Action         Date";
-            // 
             // currentDriverLabel
             // 
             this.currentDriverLabel.AutoSize = true;
@@ -347,13 +339,25 @@
             this.currentDriverLabel.TabIndex = 27;
             this.currentDriverLabel.Text = "Currrent Driver: ";
             // 
+            // activitiesLog
+            // 
+            this.activitiesLog.BackColor = System.Drawing.Color.White;
+            this.activitiesLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.activitiesLog.Location = new System.Drawing.Point(786, 335);
+            this.activitiesLog.Multiline = true;
+            this.activitiesLog.Name = "activitiesLog";
+            this.activitiesLog.ReadOnly = true;
+            this.activitiesLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.activitiesLog.Size = new System.Drawing.Size(433, 260);
+            this.activitiesLog.TabIndex = 28;
+            // 
             // carApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 636);
+            this.Controls.Add(this.activitiesLog);
             this.Controls.Add(this.currentDriverLabel);
-            this.Controls.Add(this.activitiesLogLabel);
             this.Controls.Add(this.errorsListLabel);
             this.Controls.Add(this.errorsLabel);
             this.Controls.Add(this.engineTempLabel);
@@ -411,7 +415,6 @@
         private System.Windows.Forms.Button themeButton;
         private System.Windows.Forms.Label errorsLabel;
         private System.Windows.Forms.Label errorsListLabel;
-        private System.Windows.Forms.Label activitiesLogLabel;
         private System.Windows.Forms.Label currentDriverLabel;
         public System.Windows.Forms.Label fuelLabel;
         public System.Windows.Forms.Label externalTempLabel;
@@ -419,6 +422,7 @@
         public System.Windows.Forms.Label batteryLabel;
         public System.Windows.Forms.Label oilLevelLabel;
         public System.Windows.Forms.Label engineTempLabel;
+        public System.Windows.Forms.TextBox activitiesLog;
     }
 }
 

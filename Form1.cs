@@ -14,6 +14,7 @@ namespace CS_363_Car_App
     {
         public bool doorsUnlocked;
         public bool alarmON;
+        public bool carON;
         public carApp()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace CS_363_Car_App
             //night -> day
             if(this.BackColor == Color.Black)
             {
-                this.BackColor = Color.White;
+                this.BackColor = SystemColors.Control;
                 vehicleDataLabel.ForeColor = Color.Black;
                 engineTempLabel.ForeColor = Color.Black;
                 oilLevelLabel.ForeColor = Color.Black;
@@ -41,13 +42,14 @@ namespace CS_363_Car_App
                 errorsLabel.ForeColor = Color.Black;
                 errorsListLabel.ForeColor = Color.Black;
                 activitiesLabel.ForeColor = Color.Black;
-                activitiesLogLabel.ForeColor = Color.Black;
                 vehicleNameLabel.ForeColor = Color.Black;
                 fuelLabel.ForeColor = Color.Black;
                 doorsLabel.ForeColor = Color.Black;
                 alarmLabel.ForeColor = Color.Black;
                 windowsLabel.ForeColor = Color.Black;
                 currentDriverLabel.ForeColor = Color.Black;
+                activitiesLog.BackColor = Color.White;
+                activitiesLog.ForeColor = Color.Black;
 
                 startButton.ForeColor = Color.Black;
                 startButton.BackColor = Color.White;
@@ -81,13 +83,14 @@ namespace CS_363_Car_App
                 errorsLabel.ForeColor = Color.White;
                 errorsListLabel.ForeColor = Color.White;
                 activitiesLabel.ForeColor = Color.White;
-                activitiesLogLabel.ForeColor = Color.White;
                 vehicleNameLabel.ForeColor = Color.White;
                 fuelLabel.ForeColor = Color.White;
                 doorsLabel.ForeColor = Color.White;
                 alarmLabel.ForeColor = Color.White;
                 windowsLabel.ForeColor = Color.White;
                 currentDriverLabel.ForeColor = Color.White;
+                activitiesLog.BackColor = Color.Black;
+                activitiesLog.ForeColor = Color.White;
 
                 startButton.ForeColor = Color.White;
                 startButton.BackColor = Color.Black;
@@ -114,31 +117,65 @@ namespace CS_363_Car_App
         private void doorUnlockButton_Click(object sender, EventArgs e)
         {
             doorsUnlocked = true;
+            activitiesLog.Text = DateTime.Now + "   Doors Unlocked\r\n" + activitiesLog.Text;
         }
 
         private void doorLockButton_Click(object sender, EventArgs e)
         {
             doorsUnlocked = false;
+            activitiesLog.Text = DateTime.Now + "   Doors Locked\r\n" + activitiesLog.Text;
         }
 
         private void windowsOpenButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Windows Opened");
+            activitiesLog.Text = DateTime.Now + "   Windows Opened\r\n" + activitiesLog.Text;
         }
 
         private void windowsCloseButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Windows Closed");
+            activitiesLog.Text = DateTime.Now + "   Windows Closed\r\n" + activitiesLog.Text;
         }
 
         private void alarmONButton_Click(object sender, EventArgs e)
         {
             alarmON = true;
+            activitiesLog.Text = DateTime.Now + "   Alarm Activated\r\n" + activitiesLog.Text;
+
         }
 
         private void alarmOFFButton_Click(object sender, EventArgs e)
         {
             alarmON = false;
+            activitiesLog.Text = DateTime.Now + "   Alarm Deactivated\r\n" + activitiesLog.Text;
         }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            if(carON)
+            {
+                MessageBox.Show("Vehicle Already Started");
+            }
+            else
+            {
+                carON = true;
+                //string oldText = activitiesLog.Text;
+                activitiesLog.Text = DateTime.Now + "   Vehicle Started\r\n" + activitiesLog.Text;
+
+            }
+        }
+
+        private void stopButton_Click(object sender, EventArgs e)
+        {
+            if (!carON)
+            {
+                MessageBox.Show("Vehicle Already Stopped");
+            }
+            else
+            {
+                carON = false;
+                //string oldText = activitiesLog.Text;
+                activitiesLog.Text = DateTime.Now + "   Vehicle Stopped\r\n" + activitiesLog.Text;
+            }
+        }   
     }
 }
