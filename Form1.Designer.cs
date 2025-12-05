@@ -54,9 +54,9 @@
             this.oilLevelLabel = new System.Windows.Forms.Label();
             this.engineTempLabel = new System.Windows.Forms.Label();
             this.errorsLabel = new System.Windows.Forms.Label();
-            this.errorsListLabel = new System.Windows.Forms.Label();
             this.currentDriverLabel = new System.Windows.Forms.Label();
             this.activitiesLog = new System.Windows.Forms.TextBox();
+            this.vehicleErrors = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -319,16 +319,6 @@
             this.errorsLabel.TabIndex = 24;
             this.errorsLabel.Text = "Vehicle Errors";
             // 
-            // errorsListLabel
-            // 
-            this.errorsListLabel.AutoSize = true;
-            this.errorsListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.errorsListLabel.Location = new System.Drawing.Point(481, 473);
-            this.errorsListLabel.Name = "errorsListLabel";
-            this.errorsListLabel.Size = new System.Drawing.Size(220, 31);
-            this.errorsListLabel.TabIndex = 25;
-            this.errorsListLabel.Text = "- List Errors Here";
-            // 
             // currentDriverLabel
             // 
             this.currentDriverLabel.AutoSize = true;
@@ -351,14 +341,26 @@
             this.activitiesLog.Size = new System.Drawing.Size(433, 260);
             this.activitiesLog.TabIndex = 28;
             // 
+            // vehicleErrors
+            // 
+            this.vehicleErrors.BackColor = System.Drawing.Color.White;
+            this.vehicleErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.vehicleErrors.Location = new System.Drawing.Point(480, 455);
+            this.vehicleErrors.Multiline = true;
+            this.vehicleErrors.Name = "vehicleErrors";
+            this.vehicleErrors.ReadOnly = true;
+            this.vehicleErrors.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.vehicleErrors.Size = new System.Drawing.Size(278, 169);
+            this.vehicleErrors.TabIndex = 29;
+            // 
             // carApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 636);
+            this.Controls.Add(this.vehicleErrors);
             this.Controls.Add(this.activitiesLog);
             this.Controls.Add(this.currentDriverLabel);
-            this.Controls.Add(this.errorsListLabel);
             this.Controls.Add(this.errorsLabel);
             this.Controls.Add(this.engineTempLabel);
             this.Controls.Add(this.oilLevelLabel);
@@ -414,7 +416,6 @@
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button themeButton;
         private System.Windows.Forms.Label errorsLabel;
-        private System.Windows.Forms.Label errorsListLabel;
         private System.Windows.Forms.Label currentDriverLabel;
         public System.Windows.Forms.Label fuelLabel;
         public System.Windows.Forms.Label externalTempLabel;
@@ -423,6 +424,7 @@
         public System.Windows.Forms.Label oilLevelLabel;
         public System.Windows.Forms.Label engineTempLabel;
         public System.Windows.Forms.TextBox activitiesLog;
+        public System.Windows.Forms.TextBox vehicleErrors;
     }
 }
 

@@ -32,6 +32,7 @@ namespace CS_363_Car_App
                 if (fuelLevel <= 0)
                 {
                     MessageBox.Show("ERROR: No Fuel");
+                    _carApp.vehicleErrors.Text = "No Fuel\r\n" + _carApp.vehicleErrors.Text;
                     return;
                 }
                 else if (oilLevel <= 0)
@@ -47,13 +48,13 @@ namespace CS_363_Car_App
                 else
                 {
 
-                    fuelLevel -= 1;
+                    fuelLevel -= 10;
                     _carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "%";
 
-                    oilLevel -= 1;
+                    oilLevel -= 10;
                     _carApp.oilLevelLabel.Text = "Oil Level: " + oilLevel + "%";
 
-                    batteryLevel -= 1;
+                    batteryLevel -= 10;
                     _carApp.batteryLabel.Text = "Battery: " + batteryLevel + "%";
                 }
             }

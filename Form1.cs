@@ -40,7 +40,6 @@ namespace CS_363_Car_App
                 internalTempLabel.ForeColor = Color.Black;
                 externalTempLabel.ForeColor = Color.Black;
                 errorsLabel.ForeColor = Color.Black;
-                errorsListLabel.ForeColor = Color.Black;
                 activitiesLabel.ForeColor = Color.Black;
                 vehicleNameLabel.ForeColor = Color.Black;
                 fuelLabel.ForeColor = Color.Black;
@@ -81,7 +80,6 @@ namespace CS_363_Car_App
                 internalTempLabel.ForeColor = Color.White;
                 externalTempLabel.ForeColor = Color.White;
                 errorsLabel.ForeColor = Color.White;
-                errorsListLabel.ForeColor = Color.White;
                 activitiesLabel.ForeColor = Color.White;
                 vehicleNameLabel.ForeColor = Color.White;
                 fuelLabel.ForeColor = Color.White;
