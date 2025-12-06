@@ -42,7 +42,7 @@ namespace CS_363_Car_App
                 errorsLabel.ForeColor = Color.Black;
                 activitiesLabel.ForeColor = Color.Black;
                 vehicleNameLabel.ForeColor = Color.Black;
-                fuelLabel.ForeColor = Color.Blue;
+                fuelLabel.ForeColor = Color.Black;
                 doorsLabel.ForeColor = Color.Black;
                 alarmLabel.ForeColor = Color.Black;
                 windowsLabel.ForeColor = Color.Black;
@@ -73,6 +73,7 @@ namespace CS_363_Car_App
             else
             {
                 this.BackColor = Color.Black;
+                this.ForeColor = Color.White;
                 vehicleDataLabel.ForeColor = Color.White;
                 engineTempLabel.ForeColor = Color.White;
                 oilLevelLabel.ForeColor = Color.White;
