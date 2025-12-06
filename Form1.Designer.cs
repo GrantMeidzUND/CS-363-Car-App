@@ -352,6 +352,15 @@
             this.vehicleErrors.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.vehicleErrors.Size = new System.Drawing.Size(278, 169);
             this.vehicleErrors.TabIndex = 29;
+
+            this.batteryLabel.AutoSize = true;
+            this.batteryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.batteryLabel.Location = new System.Drawing.Point(450, 200);
+            this.batteryLabel.Name = "batteryLabel";
+            this.batteryLabel.Size = new System.Drawing.Size(185, 31);
+            this.batteryLabel.TabIndex = 21;
+            this.batteryLabel.Text = "Battery: 100%";
+            
             // 
             // carApp
             // 
