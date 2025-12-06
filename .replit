@@ -28,7 +28,3 @@ args = "DISPLAY=:0 mono \"bin/Debug/CS 363 Car App.exe\""
 
 [workflows.workflow.metadata]
 outputType = "vnc"
-
-[[ports]]
-localPort = 37939
-externalPort = 80
