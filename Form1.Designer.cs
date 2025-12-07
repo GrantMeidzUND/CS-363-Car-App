@@ -247,7 +247,7 @@
             this.fuelLabel.Name = "fuelLabel";
             this.fuelLabel.Size = new System.Drawing.Size(151, 31);
             this.fuelLabel.TabIndex = 17;
-            this.fuelLabel.Text = "Fuel: 100%";
+            this.fuelLabel.Text = "Fuel: 100% .";
             // 
             // themeButton
             // 
@@ -267,7 +267,7 @@
             this.externalTempLabel.Name = "externalTempLabel";
             this.externalTempLabel.Size = new System.Drawing.Size(258, 31);
             this.externalTempLabel.TabIndex = 19;
-            this.externalTempLabel.Text = "External Temp: 20 F";
+            this.externalTempLabel.Text = "External Temp: 20 F .";
             // 
             // internalTempLabel
             // 
@@ -277,7 +277,7 @@
             this.internalTempLabel.Name = "internalTempLabel";
             this.internalTempLabel.Size = new System.Drawing.Size(250, 31);
             this.internalTempLabel.TabIndex = 20;
-            this.internalTempLabel.Text = "Internal Temp: 75 F";
+            this.internalTempLabel.Text = "Internal Temp: 75 F .";
             // 
             // batteryLabel
             // 
@@ -287,7 +287,7 @@
             this.batteryLabel.Name = "batteryLabel";
             this.batteryLabel.Size = new System.Drawing.Size(185, 31);
             this.batteryLabel.TabIndex = 21;
-            this.batteryLabel.Text = "Battery: 100%";
+            this.batteryLabel.Text = "Battery: 100% .";
             // 
             // oilLevelLabel
             // 
@@ -297,7 +297,7 @@
             this.oilLevelLabel.Name = "oilLevelLabel";
             this.oilLevelLabel.Size = new System.Drawing.Size(203, 31);
             this.oilLevelLabel.TabIndex = 22;
-            this.oilLevelLabel.Text = "Oil Level: 100%";
+            this.oilLevelLabel.Text = "Oil Level: 100% .";
             // 
             // engineTempLabel
             // 
@@ -307,7 +307,7 @@
             this.engineTempLabel.Name = "engineTempLabel";
             this.engineTempLabel.Size = new System.Drawing.Size(258, 31);
             this.engineTempLabel.TabIndex = 23;
-            this.engineTempLabel.Text = "Engine Temp: 200 F";
+            this.engineTempLabel.Text = "Engine Temp: 200 F .";
             // 
             // errorsLabel
             // 
@@ -353,13 +353,6 @@
             this.vehicleErrors.Size = new System.Drawing.Size(278, 169);
             this.vehicleErrors.TabIndex = 29;
 
-            this.battery.AutoSize = true;
-            this.battery.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.battery.Location = new System.Drawing.Point(450, 200);
-            this.battery.Name = "batteryLabel";
-            this.battery.Size = new System.Drawing.Size(185, 31);
-            this.battery.TabIndex = 21;
-            this.battery.Text = "Battery: 100%";
             
             // 
             // carApp

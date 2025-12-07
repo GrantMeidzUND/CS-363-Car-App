@@ -15,6 +15,9 @@ namespace CS_363_Car_App
         public bool doorsUnlocked;
         public bool alarmON;
         public bool carON;
+        private System.Windows.Forms.Timer fuelTimer;
+        private int fuelLevel = 100;
+    
         public carApp()
         {
             InitializeComponent();
@@ -24,6 +27,12 @@ namespace CS_363_Car_App
             //creates and shows the controller
             controllerForm controllerForm = new controllerForm(this);
             controllerForm.Show();
+            
+            // Setup fuel timer
+            fuelTimer = new System.Windows.Forms.Timer();
+            fuelTimer.Interval = 1000;
+            fuelTimer.Tick += fuelTimer_Tick;
+            fuelTimer.Start();
         }
 
         //impliments day/night theme button
@@ -175,6 +184,25 @@ namespace CS_363_Car_App
                 //string oldText = activitiesLog.Text;
                 activitiesLog.Text = DateTime.Now + "   Vehicle Stopped\r\n" + activitiesLog.Text;
             }
-        }   
+        }
+
+        private void fuelTimer_Tick(object sender, EventArgs e)
+        {
+            if (carON && fuelLevel > 0)
+            {
+                fuelLevel -= 1;
+                fuelLabel.Text = "Fuel: " + fuelLevel + "%";
+                
+                if (fuelLevel == 75 || fuelLevel == 50 || fuelLevel == 25)
+                {
+                    activitiesLog.Text = DateTime.Now + "   Fuel Level: " + fuelLevel + "%\r\n" + activitiesLog.Text;
+                }
+                else if (fuelLevel <= 0)
+                {
+                    fuelLevel = 0;
+                    activitiesLog.Text = DateTime.Now + "   Fuel Empty!\r\n" + activitiesLog.Text;
+                }
+            }
+        }
     }
 }
