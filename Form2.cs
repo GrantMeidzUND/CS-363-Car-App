@@ -98,6 +98,7 @@ namespace CS_363_Car_App
         private void refuelButton_Click(object sender, EventArgs e)
         {
             fuelLevel = 100;
+            _carApp.fuelLevel = 100;
             _carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "%";
             _carApp.activitiesLog.Text = DateTime.Now + "   Refueled\r\n" + _carApp.activitiesLog.Text;
         }
@@ -107,6 +108,7 @@ namespace CS_363_Car_App
             oilLevel = 100;
             _carApp.oilLevelLabel.Text = "Oil: " + oilLevel + "%";
             _carApp.activitiesLog.Text = DateTime.Now + "   Oil Changed\r\n" + _carApp.activitiesLog.Text;
+        
         }
 
         private void batteryChargeButton_Click(object sender, EventArgs e)

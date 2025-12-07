@@ -16,7 +16,7 @@ namespace CS_363_Car_App
         public bool alarmON;
         public bool carON;
         private System.Windows.Forms.Timer fuelTimer;
-        private int fuelLevel = 100;
+        public int fuelLevel = 100;
     
         public carApp()
         {
@@ -30,7 +30,7 @@ namespace CS_363_Car_App
             
             // Setup fuel timer
             fuelTimer = new System.Windows.Forms.Timer();
-            fuelTimer.Interval = 1000;
+            fuelTimer.Interval = 100;
             fuelTimer.Tick += fuelTimer_Tick;
             fuelTimer.Start();
         }
@@ -191,7 +191,7 @@ namespace CS_363_Car_App
             if (carON && fuelLevel > 0)
             {
                 fuelLevel -= 1;
-                fuelLabel.Text = "Fuel: " + fuelLevel + "%";
+                fuelLabel.Text = "Fuel: " + fuelLevel + "% .";
                 
                 if (fuelLevel == 75 || fuelLevel == 50 || fuelLevel == 25)
                 {
