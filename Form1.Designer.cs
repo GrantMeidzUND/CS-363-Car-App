@@ -247,7 +247,7 @@
             this.fuelLabel.Name = "fuelLabel";
             this.fuelLabel.Size = new System.Drawing.Size(151, 31);
             this.fuelLabel.TabIndex = 17;
-            this.fuelLabel.Text = "Fuel: 100% .";
+            this.fuelLabel.Text = "Fuel: " + fuelLevel +  "% .";
             // 
             // themeButton
             // 

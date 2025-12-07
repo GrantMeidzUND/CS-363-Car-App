@@ -99,14 +99,14 @@ namespace CS_363_Car_App
         {
             fuelLevel = 100;
             _carApp.fuelLevel = 100;
-            _carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "%";
+            _carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "% .";
             _carApp.activitiesLog.Text = DateTime.Now + "   Refueled\r\n" + _carApp.activitiesLog.Text;
         }
 
         private void oilChangeButton_Click(object sender, EventArgs e)
         {
             oilLevel = 100;
-            _carApp.oilLevelLabel.Text = "Oil: " + oilLevel + "%";
+            _carApp.oilLevelLabel.Text = "Oil: " + oilLevel + "% .";
             _carApp.activitiesLog.Text = DateTime.Now + "   Oil Changed\r\n" + _carApp.activitiesLog.Text;
         
         }
@@ -114,7 +114,7 @@ namespace CS_363_Car_App
         private void batteryChargeButton_Click(object sender, EventArgs e)
         {
             batteryLevel = 100;
-            _carApp.batteryLabel.Text = "Battery: " + batteryLevel + "%";
+            _carApp.batteryLabel.Text = "Battery: " + batteryLevel + "% .";
             _carApp.activitiesLog.Text = DateTime.Now + "   Battery Charged\r\n" + _carApp.activitiesLog.Text;
 
         }

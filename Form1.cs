@@ -16,7 +16,10 @@ namespace CS_363_Car_App
         public bool alarmON;
         public bool carON;
         private System.Windows.Forms.Timer fuelTimer;
-        public int fuelLevel = 100;
+        public static Random random = new Random();
+        public int fuelLevel;
+        //public int fuelLevel = random.Next(10, 100);
+        
     
         public carApp()
         {
@@ -33,6 +36,8 @@ namespace CS_363_Car_App
             fuelTimer.Interval = 100;
             fuelTimer.Tick += fuelTimer_Tick;
             fuelTimer.Start();
+            fuelLevel = random.Next(10, 100);
+            
         }
 
         //impliments day/night theme button
@@ -77,6 +82,8 @@ namespace CS_363_Car_App
                 windowsOpenButton.BackColor = Color.White;
                 driverButton.ForeColor = Color.Black;
                 driverButton.BackColor = Color.White;
+                vehicleErrors.BackColor = Color.White;
+                vehicleErrors.ForeColor = Color.Black;
             }
             //day -> night
             else
@@ -118,6 +125,8 @@ namespace CS_363_Car_App
                 windowsOpenButton.BackColor = Color.Black;
                 driverButton.ForeColor = Color.White;
                 driverButton.BackColor = Color.Black;
+                vehicleErrors.BackColor = Color.Black;
+                vehicleErrors.ForeColor = Color.White;
 
             }
         }
@@ -163,6 +172,9 @@ namespace CS_363_Car_App
             {
                 MessageBox.Show("Vehicle Already Started");
             }
+            else if (fuelLevel == 0){
+                vehicleErrors.Text = "Cannot start vehicle: No Fuel\r\n" + vehicleErrors.Text;
+            }
             else
             {
                 carON = true;
@@ -188,6 +200,7 @@ namespace CS_363_Car_App
 
         private void fuelTimer_Tick(object sender, EventArgs e)
         {
+            fuelLabel.Text = "Fuel: " + fuelLevel + "% .";
             if (carON && fuelLevel > 0)
             {
                 fuelLevel -= 1;
@@ -201,6 +214,9 @@ namespace CS_363_Car_App
                 {
                     fuelLevel = 0;
                     activitiesLog.Text = DateTime.Now + "   Fuel Empty!\r\n" + activitiesLog.Text;
+                    carON = false;
+                    activitiesLog.Text = DateTime.Now + "   Vehicle Stopped\r\n" + activitiesLog.Text;
+                    vehicleErrors.Text = "Vehicle died: No Fuel\r\n" + vehicleErrors.Text;
                 }
             }
         }
