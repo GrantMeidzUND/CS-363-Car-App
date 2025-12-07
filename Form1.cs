@@ -20,7 +20,7 @@ namespace CS_363_Car_App
         public int fuelLevel;
         public int oilLevel;
         public int batteryLevel;
-        public string vehicleType = "ev";
+        public string vehicleType = "gas";
         
     
         public carApp()
@@ -244,6 +244,42 @@ namespace CS_363_Car_App
                     fuelLabel.ForeColor = Color.Red;
                 }
             }
+        }
+
+        private void gasToElecButton_Click(object sender, EventArgs e)
+        {
+            if(vehicleType == "hybrid")
+            {
+                vehicleType = "gas";
+                typeDisplay.Text = "gas";
+                engineTempLabel.Visible = true;
+                oilLevelLabel.Visible = true;
+                batteryLabel.Visible = true;
+            }
+
+            else if (vehicleType == "gas")
+            {
+                vehicleType = "ev";
+                typeDisplay.Text = "ev";
+                engineTempLabel.Visible = false;
+                oilLevelLabel.Visible = false;
+                batteryLabel.Visible = false;
+            }
+
+            else if (vehicleType == "ev")
+            {
+                vehicleType = "hybrid";
+                typeDisplay.Text = "hybrid";
+                engineTempLabel.Visible = true;
+                oilLevelLabel.Visible = true;
+                batteryLabel.Visible = true;
+            }
+        }
+
+        private void driverButton_Click(object sender, EventArgs e)
+        {
+            addDriverForm newForm = new addDriverForm();
+            newForm.Show();
         }
     }
 }
