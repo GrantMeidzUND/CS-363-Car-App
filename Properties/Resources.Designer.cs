@@ -69,6 +69,13 @@ namespace CS_363_Car_App.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static System.Drawing.Bitmap tesla {
+            get {
+                object obj = ResourceManager.GetObject("tesla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.

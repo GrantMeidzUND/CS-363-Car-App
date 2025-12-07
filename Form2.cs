@@ -13,7 +13,7 @@ namespace CS_363_Car_App
     public partial class controllerForm : Form
     {
         private carApp _carApp; //lets you edit the labels from main form
-        int fuelLevel = 100;
+        int fuelLevel;
         int oilLevel = 100;
         int batteryLevel = 100;
 
@@ -21,6 +21,10 @@ namespace CS_363_Car_App
         {
             InitializeComponent();
             _carApp = _carApp_;
+            //int fuelLevel = _carApp.fuelLevel;
+            //_carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "% .";
+            
+        
         }
 
         //This function lowers the values of the car "stats" when drive button is clicked
@@ -29,12 +33,13 @@ namespace CS_363_Car_App
             if(_carApp.carON)
             {
                 // if any levels below zero
-                if (fuelLevel <= 0)
+                if (_carApp.fuelLevel <= 0)
                 {
                     MessageBox.Show("ERROR: No Fuel");
                     _carApp.vehicleErrors.Text = "No Fuel\r\n" + _carApp.vehicleErrors.Text;
                     return;
                 }
+                
                 else if (oilLevel <= 0)
                 {
                     MessageBox.Show("ERROR: No Oil");
@@ -47,15 +52,28 @@ namespace CS_363_Car_App
                 }
                 else
                 {
+                    if (_carApp.fuelLevel - 10 < 0){
+                        _carApp.fuelLevel = 0;
+                        _carApp.fuelLabel.Text = "Fuel: 0% .";
+                        _carApp.carON = false;
+                        _carApp.activitiesLog.Text = DateTime.Now + "   Vehicle Stopped\r\n" + _carApp.activitiesLog.Text;
+                        _carApp.vehicleErrors.Text = "Vehicle died: No Fuel\r\n" + _carApp.vehicleErrors.Text;
+                    }
+                    else{
+                    _carApp.fuelLevel -= 10;
+                    _carApp.fuelLabel.Text = "Fuel: " + _carApp.fuelLevel + "% .";
 
-                    fuelLevel -= 10;
-                    _carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "%";
+                    oilLevel -= 1;
+                    _carApp.oilLevelLabel.Text = "Oil Level: " + oilLevel + "% .";
 
-                    oilLevel -= 10;
-                    _carApp.oilLevelLabel.Text = "Oil Level: " + oilLevel + "%";
-
-                    batteryLevel -= 10;
-                    _carApp.batteryLabel.Text = "Battery: " + batteryLevel + "%";
+                    batteryLevel -= 5;
+                    _carApp.batteryLabel.Text = "Battery: " + batteryLevel + "% .";
+                        }
+                    }
+                if (_carApp.fuelLevel == 0){
+                    _carApp.vehicleErrors.Text = "Vehicle died: No Fuel\r\n" + _carApp.vehicleErrors.Text;
+                    _carApp.carON = false;
+                    _carApp.activitiesLog.Text = DateTime.Now + "   Vehicle Stopped\r\n" + _carApp.activitiesLog.Text;
                 }
             }
             else
@@ -97,9 +115,9 @@ namespace CS_363_Car_App
 
         private void refuelButton_Click(object sender, EventArgs e)
         {
-            fuelLevel = 100;
             _carApp.fuelLevel = 100;
-            _carApp.fuelLabel.Text = "Fuel: " + fuelLevel + "% .";
+            _carApp.fuelLabel.ForeColor = Color.Black;
+            _carApp.fuelLabel.Text = "Fuel: " + _carApp.fuelLevel + "% .";
             _carApp.activitiesLog.Text = DateTime.Now + "   Refueled\r\n" + _carApp.activitiesLog.Text;
         }
 

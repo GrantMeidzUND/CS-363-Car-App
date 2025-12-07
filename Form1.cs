@@ -18,7 +18,9 @@ namespace CS_363_Car_App
         private System.Windows.Forms.Timer fuelTimer;
         public static Random random = new Random();
         public int fuelLevel;
-        //public int fuelLevel = random.Next(10, 100);
+        public int oilLevel;
+        public int batteryLevel;
+        public string vehicleType = "ev";
         
     
         public carApp()
@@ -33,11 +35,22 @@ namespace CS_363_Car_App
             
             // Setup fuel timer
             fuelTimer = new System.Windows.Forms.Timer();
-            fuelTimer.Interval = 100;
+            fuelLevel = random.Next(10, 100);
+            if (fuelLevel <= 25){
+                fuelLabel.ForeColor = Color.Red;
+            }
+            fuelLabel.Text = "Fuel: " + fuelLevel + "% .";
+            fuelTimer.Interval = 1000;
             fuelTimer.Tick += fuelTimer_Tick;
             fuelTimer.Start();
-            fuelLevel = random.Next(10, 100);
             
+
+
+            oilLevel = random.Next(50, 100);
+            oilLevelLabel.Text = "Oil Level: " + oilLevel + "% .";
+
+            batteryLevel = random.Next(50, 100);
+            batteryLabel.Text = "Battery: " + batteryLevel + "% .";
         }
 
         //impliments day/night theme button
@@ -131,6 +144,16 @@ namespace CS_363_Car_App
             }
         }
 
+        private void gasButton_Click(object sender, EventArgs e){
+            vehicleType = "gas";
+            InitializeComponent();
+        }
+
+        private void evButton_Click(object sender, EventArgs e){
+            vehicleType = "ev";
+            InitializeComponent();
+        }
+        
         private void doorUnlockButton_Click(object sender, EventArgs e)
         {
             doorsUnlocked = true;
@@ -200,7 +223,6 @@ namespace CS_363_Car_App
 
         private void fuelTimer_Tick(object sender, EventArgs e)
         {
-            fuelLabel.Text = "Fuel: " + fuelLevel + "% .";
             if (carON && fuelLevel > 0)
             {
                 fuelLevel -= 1;
@@ -217,6 +239,9 @@ namespace CS_363_Car_App
                     carON = false;
                     activitiesLog.Text = DateTime.Now + "   Vehicle Stopped\r\n" + activitiesLog.Text;
                     vehicleErrors.Text = "Vehicle died: No Fuel\r\n" + vehicleErrors.Text;
+                }
+                if (fuelLevel <= 25){
+                    fuelLabel.ForeColor = Color.Red;
                 }
             }
         }
