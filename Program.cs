@@ -16,7 +16,8 @@ namespace CS_363_Car_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new carApp());
+            //Application.Run(new carApp());
+            Application.Run(new startMenu());
             //controllerForm controllerForm = new controllerForm(this);
             //controllerForm.Show();
         }

@@ -281,5 +281,10 @@ namespace CS_363_Car_App
             addDriverForm newForm = new addDriverForm();
             newForm.Show();
         }
+
+        private void updateBox_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("App Updated");
+        }
     }
 }

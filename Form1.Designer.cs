@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(carApp));
             this.driverButton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.vehicleNameLabel = new System.Windows.Forms.Label();
             this.windowsLabel = new System.Windows.Forms.Label();
             this.alarmLabel = new System.Windows.Forms.Label();
@@ -54,11 +52,16 @@
             this.oilLevelLabel = new System.Windows.Forms.Label();
             this.engineTempLabel = new System.Windows.Forms.Label();
             this.errorsLabel = new System.Windows.Forms.Label();
-            this.currentDriverLabel = new System.Windows.Forms.Label();
             this.activitiesLog = new System.Windows.Forms.TextBox();
             this.vehicleErrors = new System.Windows.Forms.TextBox();
             this.gasToElecButton = new System.Windows.Forms.Button();
             this.typeDisplay = new System.Windows.Forms.Label();
+            this.currentDriverLabel = new System.Windows.Forms.Label();
+            this.driverDropdown = new System.Windows.Forms.ComboBox();
+            this.gpsButton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.updateBox = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,31 +71,11 @@
             this.driverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.driverButton.Location = new System.Drawing.Point(12, 12);
             this.driverButton.Name = "driverButton";
-            this.driverButton.Size = new System.Drawing.Size(75, 26);
+            this.driverButton.Size = new System.Drawing.Size(93, 26);
             this.driverButton.TabIndex = 0;
-            this.driverButton.Text = "DRIVER";
+            this.driverButton.Text = "Add Driver";
             this.driverButton.UseVisualStyleBackColor = true;
             this.driverButton.Click += new System.EventHandler(this.driverButton_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.InitialImage = global::CS_363_Car_App.Properties.Resources.map_pic;
-            this.pictureBox2.Location = new System.Drawing.Point(786, 44);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(433, 239);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(433, 239);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // vehicleNameLabel
             // 
@@ -100,9 +83,9 @@
             this.vehicleNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.vehicleNameLabel.Location = new System.Drawing.Point(94, 286);
             this.vehicleNameLabel.Name = "vehicleNameLabel";
-            this.vehicleNameLabel.Size = new System.Drawing.Size(269, 46);
+            this.vehicleNameLabel.Size = new System.Drawing.Size(247, 46);
             this.vehicleNameLabel.TabIndex = 3;
-            this.vehicleNameLabel.Text = "Vehicle Name";
+            this.vehicleNameLabel.Text = "Your Vehicle";
             // 
             // windowsLabel
             // 
@@ -322,16 +305,6 @@
             this.errorsLabel.TabIndex = 24;
             this.errorsLabel.Text = "Vehicle Errors";
             // 
-            // currentDriverLabel
-            // 
-            this.currentDriverLabel.AutoSize = true;
-            this.currentDriverLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.currentDriverLabel.Location = new System.Drawing.Point(93, 17);
-            this.currentDriverLabel.Name = "currentDriverLabel";
-            this.currentDriverLabel.Size = new System.Drawing.Size(110, 17);
-            this.currentDriverLabel.TabIndex = 27;
-            this.currentDriverLabel.Text = "Currrent Driver: ";
-            // 
             // activitiesLog
             // 
             this.activitiesLog.BackColor = System.Drawing.Color.White;
@@ -377,11 +350,76 @@
             this.typeDisplay.TabIndex = 31;
             this.typeDisplay.Text = "gas";
             // 
+            // currentDriverLabel
+            // 
+            this.currentDriverLabel.AutoSize = true;
+            this.currentDriverLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.currentDriverLabel.Location = new System.Drawing.Point(111, 17);
+            this.currentDriverLabel.Name = "currentDriverLabel";
+            this.currentDriverLabel.Size = new System.Drawing.Size(110, 17);
+            this.currentDriverLabel.TabIndex = 27;
+            this.currentDriverLabel.Text = "Currrent Driver: ";
+            // 
+            // driverDropdown
+            // 
+            this.driverDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.driverDropdown.FormattingEnabled = true;
+            this.driverDropdown.Items.AddRange(new object[] {
+            "Grant",
+            "Carson",
+            "Navy"});
+            this.driverDropdown.Location = new System.Drawing.Point(216, 17);
+            this.driverDropdown.Name = "driverDropdown";
+            this.driverDropdown.Size = new System.Drawing.Size(121, 21);
+            this.driverDropdown.TabIndex = 32;
+            // 
+            // gpsButton
+            // 
+            this.gpsButton.Location = new System.Drawing.Point(1074, 11);
+            this.gpsButton.Name = "gpsButton";
+            this.gpsButton.Size = new System.Drawing.Size(75, 23);
+            this.gpsButton.TabIndex = 33;
+            this.gpsButton.Text = "update GPS";
+            this.gpsButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.InitialImage = global::CS_363_Car_App.Properties.Resources.map_pic;
+            this.pictureBox2.Location = new System.Drawing.Point(786, 44);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(433, 239);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(433, 239);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // updateBox
+            // 
+            this.updateBox.Location = new System.Drawing.Point(1155, 11);
+            this.updateBox.Name = "updateBox";
+            this.updateBox.Size = new System.Drawing.Size(75, 23);
+            this.updateBox.TabIndex = 34;
+            this.updateBox.Text = "update App";
+            this.updateBox.UseVisualStyleBackColor = true;
+            this.updateBox.Click += new System.EventHandler(this.updateBox_Click);
+            // 
             // carApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 636);
+            this.Controls.Add(this.updateBox);
+            this.Controls.Add(this.gpsButton);
+            this.Controls.Add(this.driverDropdown);
             this.Controls.Add(this.typeDisplay);
             this.Controls.Add(this.gasToElecButton);
             this.Controls.Add(this.vehicleErrors);
@@ -439,7 +477,6 @@
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button themeButton;
         private System.Windows.Forms.Label errorsLabel;
-        private System.Windows.Forms.Label currentDriverLabel;
         public System.Windows.Forms.Label fuelLabel;
         public System.Windows.Forms.Label externalTempLabel;
         public System.Windows.Forms.Label internalTempLabel;
@@ -450,6 +487,10 @@
         public System.Windows.Forms.TextBox vehicleErrors;
         private System.Windows.Forms.Button gasToElecButton;
         public System.Windows.Forms.Label typeDisplay;
+        private System.Windows.Forms.Label currentDriverLabel;
+        public System.Windows.Forms.ComboBox driverDropdown;
+        private System.Windows.Forms.Button gpsButton;
+        private System.Windows.Forms.Button updateBox;
     }
 }
 
