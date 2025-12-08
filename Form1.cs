@@ -76,7 +76,7 @@ namespace CS_363_Car_App
                 windowsLabel.ForeColor = Color.Black;
                 currentDriverLabel.ForeColor = Color.Black;
                 activitiesLog.BackColor = Color.White;
-                activitiesLog.ForeColor = Color.Black;
+                activitiesLog.ForeColor = Color.Black; 
                 startButton.ForeColor = Color.Black;
                 startButton.BackColor = Color.White;
                 stopButton.ForeColor = Color.Black;
