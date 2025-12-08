@@ -28,6 +28,7 @@ namespace CS_363_Car_App
             InitializeComponent();
             pictureBox1.Image = Properties.Resources.car_pic;
             pictureBox2.Image = Properties.Resources.map_pic;
+            this.FormClosing += carApp_FormClosing;
 
             //creates and shows the controller
             controllerForm controllerForm = new controllerForm(this);
@@ -76,7 +77,6 @@ namespace CS_363_Car_App
                 currentDriverLabel.ForeColor = Color.Black;
                 activitiesLog.BackColor = Color.White;
                 activitiesLog.ForeColor = Color.Black;
-
                 startButton.ForeColor = Color.Black;
                 startButton.BackColor = Color.White;
                 stopButton.ForeColor = Color.Black;
@@ -97,6 +97,17 @@ namespace CS_363_Car_App
                 driverButton.BackColor = Color.White;
                 vehicleErrors.BackColor = Color.White;
                 vehicleErrors.ForeColor = Color.Black;
+                updateBox.ForeColor = Color.Black;
+                updateBox.BackColor = Color.White;
+                gpsButton.ForeColor = Color.Black;
+                gpsButton.BackColor = Color.White;
+                typeDisplay.ForeColor = Color.Black;
+                themeButton.ForeColor = Color.Black;
+                themeButton.BackColor = Color.White;
+                gasToElecButton.ForeColor = Color.Black;
+                gasToElecButton.BackColor = Color.White;
+                driverDropdown.ForeColor = Color.Black;
+                driverDropdown.BackColor = Color.White;
             }
             //day -> night
             else
@@ -119,7 +130,6 @@ namespace CS_363_Car_App
                 currentDriverLabel.ForeColor = Color.White;
                 activitiesLog.BackColor = Color.Black;
                 activitiesLog.ForeColor = Color.White;
-
                 startButton.ForeColor = Color.White;
                 startButton.BackColor = Color.Black;
                 stopButton.ForeColor = Color.White;
@@ -140,7 +150,17 @@ namespace CS_363_Car_App
                 driverButton.BackColor = Color.Black;
                 vehicleErrors.BackColor = Color.Black;
                 vehicleErrors.ForeColor = Color.White;
-
+                updateBox.ForeColor = Color.White;
+                updateBox.BackColor = Color.Black;
+                gpsButton.ForeColor = Color.White;
+                gpsButton.BackColor = Color.Black;
+                typeDisplay.ForeColor = Color.White;
+                themeButton.ForeColor = Color.White;
+                themeButton.BackColor = Color.Black;
+                gasToElecButton.ForeColor = Color.White;
+                gasToElecButton.BackColor = Color.Black;
+                driverDropdown.ForeColor = Color.White;
+                driverDropdown.BackColor = Color.Black;
             }
         }
 
@@ -279,12 +299,32 @@ namespace CS_363_Car_App
         private void driverButton_Click(object sender, EventArgs e)
         {
             addDriverForm newForm = new addDriverForm();
-            newForm.Show();
+            newForm.ShowDialog();
+            string newDriverName = newForm.newDriverName;
+            driverDropdown.Items.Add(newDriverName);
+            int index = driverDropdown.FindString(newDriverName);
+            activitiesLog.Text = DateTime.Now + "   New Driver Created\r\n" + activitiesLog.Text;
+            driverDropdown.SelectedIndex = index;
         }
 
         private void updateBox_Click(object sender, EventArgs e)
         {
             MessageBox.Show("App Updated");
+        }
+
+        public void addNameToDrivers(string name)
+        {
+            driverDropdown.Items.Add(name);
+        }
+
+        private void carApp_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void driverDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            activitiesLog.Text = DateTime.Now + "   Driver Changed\r\n" + activitiesLog.Text;
         }
     }
 }

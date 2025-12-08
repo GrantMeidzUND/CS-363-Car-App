@@ -372,6 +372,7 @@
             this.driverDropdown.Name = "driverDropdown";
             this.driverDropdown.Size = new System.Drawing.Size(121, 21);
             this.driverDropdown.TabIndex = 32;
+            this.driverDropdown.SelectedIndexChanged += new System.EventHandler(this.driverDropdown_SelectedIndexChanged);
             // 
             // gpsButton
             // 

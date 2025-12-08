@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.startingDriver = new System.Windows.Forms.ComboBox();
             this.beginButton = new System.Windows.Forms.Button();
             this.driverButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // startingDriver
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.startingDriver.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.startingDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.startingDriver.FormattingEnabled = true;
+            this.startingDriver.Items.AddRange(new object[] {
             "Grant",
             "Carson",
             "Navy"});
-            this.comboBox1.Location = new System.Drawing.Point(226, 104);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(307, 46);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.startingDriver.Location = new System.Drawing.Point(226, 104);
+            this.startingDriver.Name = "startingDriver";
+            this.startingDriver.Size = new System.Drawing.Size(307, 46);
+            this.startingDriver.TabIndex = 0;
+            this.startingDriver.SelectedIndexChanged += new System.EventHandler(this.startingDriver_SelectedIndexChanged);
             // 
             // beginButton
             // 
@@ -77,7 +77,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.driverButton);
             this.Controls.Add(this.beginButton);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.startingDriver);
             this.Name = "startMenu";
             this.Text = "Start Menu";
             this.ResumeLayout(false);
@@ -86,7 +86,7 @@
 
         #endregion
         private System.Windows.Forms.Button beginButton;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox startingDriver;
         private System.Windows.Forms.Button driverButton;
     }
 }
