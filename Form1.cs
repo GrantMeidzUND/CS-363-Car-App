@@ -21,6 +21,9 @@ namespace CS_363_Car_App
         public int oilLevel;
         public int batteryLevel;
         public string vehicleType = "gas";
+        Random rand = new Random();
+        Point dotLocation = new Point(0,0);
+        const int dotSize = 10;
         
     
         public carApp()
@@ -29,6 +32,7 @@ namespace CS_363_Car_App
             pictureBox1.Image = Properties.Resources.car_pic;
             pictureBox2.Image = Properties.Resources.map_pic;
             this.FormClosing += carApp_FormClosing;
+            pictureBox2.Paint += PictureBox2_Paint;
 
             //creates and shows the controller
             controllerForm controllerForm = new controllerForm(this);
@@ -325,6 +329,24 @@ namespace CS_363_Car_App
         private void driverDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             activitiesLog.Text = DateTime.Now + "   Driver Changed\r\n" + activitiesLog.Text;
+        }
+
+        private void PictureBox2_Paint(object sender, PaintEventArgs e)
+        {
+            using(Brush redBrush = new SolidBrush(Color.Red))
+            {
+                e.Graphics.FillEllipse(redBrush, dotLocation.X, dotLocation.Y, dotSize, dotSize);
+            }
+        }
+
+        private void gpsButton_Click(object sender, EventArgs e)
+        {
+            int maxX = pictureBox2.Width - dotSize;
+            int maxY = pictureBox2.Height - dotSize;
+
+            dotLocation = new Point(rand.Next(0, maxX), rand.Next(0, maxY));
+
+            pictureBox2.Invalidate();
         }
     }
 }

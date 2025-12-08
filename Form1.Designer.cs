@@ -382,6 +382,7 @@
             this.gpsButton.TabIndex = 33;
             this.gpsButton.Text = "update GPS";
             this.gpsButton.UseVisualStyleBackColor = true;
+            this.gpsButton.Click += new System.EventHandler(this.gpsButton_Click);
             // 
             // pictureBox2
             // 
